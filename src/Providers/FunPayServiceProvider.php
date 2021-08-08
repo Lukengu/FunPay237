@@ -14,7 +14,7 @@ class FunPayServiceProvider extends  ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/funpay.php' => config_path('funpay.php'),
+            __DIR__.'/config/funpay.php' => config_path('funpay.php'),
         ], 'funpay');
     }
     /**
