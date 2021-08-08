@@ -25,7 +25,7 @@ class FunPayServiceProvider extends  ServiceProvider
     public function register()
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/funpay.php',
+            __DIR__.'/../../config/funpay.php',
             'funpay'
         );
     }
