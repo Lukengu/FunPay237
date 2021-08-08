@@ -1,0 +1,28 @@
+{
+    "name": "loecos/funpay237",
+    "description": "Wrapper for Funpay237 mobile paiement platform FunPay237 is an aggregator of Orange Money, MTN Mobile Money, Express Union Mobile",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "7.4.x-dev"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Loecos\\Funpay237\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Loecos\\Funpay237\\FunPayServiceProvider"
+            ]
+        }
+    },
+    "authors": [
+        {
+            "name": "Bona Philippe",
+            "email": "philippe@loecos.net"
+        }
+    ],
+    "minimum-stability": "dev"
+}
