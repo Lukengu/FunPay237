@@ -14,7 +14,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Loecos\\Funpay237\\FunPayServiceProvider"
+                "Loecos\\Funpay237\\Providers\\FunPayServiceProvider"
             ]
         }
     },

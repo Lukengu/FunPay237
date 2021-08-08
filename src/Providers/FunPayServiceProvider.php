@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Loecos\Funpay237;
+namespace Loecos\Funpay237\Providers;
 use Illuminate\Support\ServiceProvider;
 
 class FunPayServiceProvider extends  ServiceProvider
