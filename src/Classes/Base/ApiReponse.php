@@ -32,6 +32,7 @@ class ApiReponse
     {
         $this->json = $json;
         $data = json_decode($json);
+        $data = get_object_vars($data);
 
         foreach($data as $key => $value)
         {
