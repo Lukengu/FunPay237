@@ -53,10 +53,18 @@ class ApiReponse
     {
         return  $this->results[$name];
     }
+
+    /**
+     * @return string
+     */
     public function getJson()
     {
         return $this->json;
     }
+
+    /**
+     * @return array
+     */
     public function getResults()
     {
         return $this->results;

@@ -1,6 +1,4 @@
 <?php
-
-
 namespace Loecos\Funpay237\Classes\Base;
 
 use GuzzleHttp\Client;
@@ -18,12 +16,26 @@ abstract class ApiCall implements Payable
         $this->client = new Client();
 
     }
+
+    /**
+     * @param string $module
+     * @param string $action
+     * @return string
+     */
     private function buildUrl(string $module, string $action)
     {
         return $this->configuration->getBaseEndpoint()."api/{$module}/${action}";
 
     }
 
+    /**
+     * @param string $module
+     * @param string $action
+     * @param array $data
+     * @param string $method
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     protected function call( string $module, string $action, array $data=[], string $method="post")
     {
         if(!in_array($method,['post'])){
@@ -36,6 +48,11 @@ abstract class ApiCall implements Payable
 
     }
 
+    /**
+     * @param array $data
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     private function postRequest(array $data)
     {
         $data = ['json' => $data];

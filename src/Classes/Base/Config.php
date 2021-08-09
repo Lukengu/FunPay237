@@ -51,25 +51,41 @@ class Config
         $this->notify_url = $config['notify_url'];
     }
 
+    /**
+     * @return string
+     */
     public function getBaseEndpoint() : string
     {
         return $this->base_endpoint;
     }
 
+    /**
+     * @return string
+     */
     public function getApiKey() : string
     {
         return $this->api_key;
     }
 
+    /**
+     * @return string
+     */
     public function getApiSecret(): string
     {
         return $this->api_secret;
     }
+
+    /**
+     * @return string
+     */
     public function getReturnUrl() : string
     {
         return  $this->notify_url;
     }
 
+    /**
+     * @return string
+     */
     public function getNotifyUrl() : string
     {
         return $this->notify_url;
