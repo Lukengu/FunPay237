@@ -16,11 +16,11 @@ class Payment extends ApiCall
 
     }
 
-    public function check( string $transaction_id): array
+    public function check( string $transaction_id)
     {
         return $this->call('payments-process', 'check',['transaction_id' => $transaction_id]);
     }
-    public function infos( string $transaction_id) : array
+    public function infos( string $transaction_id)
     {
         return $this->call('payments-process', 'infos',['transaction_id' => $transaction_id]);
     }

@@ -9,7 +9,7 @@ use Loecos\Funpay237\Classes\Exceptions\RequestException;
 class Transfer extends ApiCall
 {
 
-    public function init(float $amount, string $type, string $description, string $account_number): array
+    public function init(float $amount, string $type, string $description, string $account_number)
     {
         if(!in_array($type, [PaymentMode::OM, PaymentMode::MOMO, PaymentMode::EUM])) {
             throw new RequestException("Invalid Payment Mode");
@@ -26,11 +26,11 @@ class Transfer extends ApiCall
 
     }
 
-    public function check( string $transaction_id): array
+    public function check( string $transaction_id)
     {
         return $this->call('transfers-process', 'check',['transaction_id' => $transaction_id]);
     }
-    public function infos( string $transaction_id) : array
+    public function infos( string $transaction_id)
     {
         return $this->call('transfers-process', 'infos',['transaction_id' => $transaction_id]);
     }
