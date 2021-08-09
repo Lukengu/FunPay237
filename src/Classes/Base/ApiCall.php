@@ -24,7 +24,7 @@ abstract class ApiCall implements Payable
 
     }
 
-    protected function call( string $module, string $action, array $data=[], string $method="post") : ApiReponse
+    protected function call( string $module, string $action, array $data=[], string $method="post")
     {
         if(!in_array($method,['post'])){
             throw new RequestException("Method not allowed");
