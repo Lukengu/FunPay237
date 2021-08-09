@@ -43,6 +43,6 @@ abstract class ApiCall implements Payable
             'auth' => [$this->configuration->getApiKey(), $this->configuration->getApiSecret()]]);
 
         $response =  new ApiReponse($response->getBody()->getContents());
-        return $response->results;
+        return $response->getResults();
     }
 }

@@ -57,5 +57,9 @@ class ApiReponse
     {
         return $this->json;
     }
+    public function getResults()
+    {
+        return $this->results;
+    }
 
 }
