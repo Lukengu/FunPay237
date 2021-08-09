@@ -36,7 +36,7 @@ abstract class ApiCall implements Payable
 
     }
 
-    private function postRequest(array $data) : array
+    private function postRequest(array $data)
     {
         $data = ['json' => $data];
         $response = $this->client->post($this->endpoint, $data, [
