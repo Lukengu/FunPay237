@@ -27,7 +27,7 @@ class Payment extends ApiCall
 
 
 
-    public function init(float $amount, string $type, string $description, string $account_number): ApiReponse
+    public function init(float $amount, string $type, string $description, string $account_number)
     {
         if(!in_array($type, [PaymentMode::OM, PaymentMode::MOMO, PaymentMode::EUM])) {
             throw new RequestException("Invalid Payment Mode");
