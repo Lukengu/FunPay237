@@ -20,11 +20,11 @@ abstract class ApiCall implements Payable
     }
     private function buildUrl(string $module, string $action)
     {
-        return $this->configuration->getBaseEndpoint()."/api/{$module}/${action}";
+        return $this->configuration->getBaseEndpoint()."api/{$module}/${action}";
 
     }
 
-    protected function call( string $module, string $action, array $data=[], string $method='post') : ApiReponse
+    protected function call( string $module, string $action, array $data=[], string $method="post") : ApiReponse
     {
         if(!in_array($method,['post'])){
             throw new RequestException("Method not allowed");
