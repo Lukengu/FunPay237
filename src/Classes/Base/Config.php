@@ -58,16 +58,16 @@ class Config
 
     public function getApiKey() : string
     {
-        return $this->getApiKey();
+        return $this->api_key;
     }
 
     public function getApiSecret(): string
     {
-        return $this->getApiSecret();
+        return $this->api_secret;
     }
     public function getReturnUrl() : string
     {
-        return $this->getReturnUrl();
+        return  $this->notify_url;
     }
 
     public function getNotifyUrl() : string
