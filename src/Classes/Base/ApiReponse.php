@@ -41,7 +41,7 @@ class ApiReponse
 
     }
 
-    private function __set($name, $value)
+    public function __set($name, $value)
     {
         if (!array_key_exists($name, $this->allowed_keys)){
             $this->results[$name] = $value;
