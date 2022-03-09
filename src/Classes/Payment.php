@@ -68,4 +68,16 @@ class Payment extends ApiCall
         return $this->call('payments-process','init',$data);
 
     }
+     /**
+     * @param string $transaction_id
+     * @return array
+     */
+    public function process(string $transaction_id)
+    {
+        $data = [
+            'transaction_id' =>  $transaction_id,
+        ];
+        return $this->call('payments-process','run',$data);
+
+    }
 }
