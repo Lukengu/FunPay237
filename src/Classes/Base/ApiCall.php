@@ -46,7 +46,7 @@ abstract class ApiCall implements Payable
         try {
             return $this->postRequest($data);
         } catch(\Exception $e) {
-            $response = ApiReponse(json_encode(['error' => $e->getMessage()]));
+            $response = new ApiReponse(json_encode(['error' => $e->getMessage()]));
             return $response->getResults();
 
         }
