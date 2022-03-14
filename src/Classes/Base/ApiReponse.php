@@ -22,6 +22,7 @@ class ApiReponse
         'reference',
         'description',
         'decision_date',
+        'error',
 
     ];
 
