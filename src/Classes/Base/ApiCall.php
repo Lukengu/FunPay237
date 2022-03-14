@@ -34,7 +34,6 @@ abstract class ApiCall implements Payable
      * @param array $data
      * @param string $method
      * @return array
-     * @throws \GuzzleHttp\Exception\GuzzleException
      */
     protected function call( string $module, string $action, array $data=[], string $method="post")
     {
@@ -46,7 +45,7 @@ abstract class ApiCall implements Payable
         $data['secret'] = $this->configuration->getApiSecret();
         try {
             return $this->postRequest($data);
-        } catch(GuzzleHttp\Exception\ClientException $e) {
+        } catch(\Exception $e) {
             return new ApiReponse(json_encode(['error' => $e->getMessage()]));
 
         }
@@ -56,15 +55,19 @@ abstract class ApiCall implements Payable
     /**
      * @param array $data
      * @return array
-     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Exception
      */
     private function postRequest(array $data)
     {
         $data = ['json' => $data];
+        try { 
         $response = $this->client->post($this->endpoint, $data, [
             'auth' => [$this->configuration->getApiKey(), $this->configuration->getApiSecret()]]);
 
         $response =  new ApiReponse($response->getBody()->getContents());
         return $response->getResults();
+        } catch(Exception $ex){
+            throw Exception($ex->getMessahge());
+        }
     }
 }
