@@ -44,7 +44,12 @@ abstract class ApiCall implements Payable
         $this->endpoint = $this->buildUrl($module, $action);
         $data['api_key'] = $this->configuration->getApiKey();
         $data['secret'] = $this->configuration->getApiSecret();
-        return $this->postRequest($data);
+        try {
+            return $this->postRequest($data);
+        } catch(GuzzleHttp\Exception\ClientException $e) {
+            throw new RequestException($e->getMessage());
+
+        }
 
     }
 
