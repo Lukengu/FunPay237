@@ -66,8 +66,8 @@ abstract class ApiCall implements Payable
 
         $response =  new ApiReponse($response->getBody()->getContents());
         return $response->getResults();
-        } catch(Exception $ex){
-            throw Exception($ex->getMessahge());
+        } catch(\Exception $ex){
+            throw new \Exception($ex->getMessahge());
         }
     }
 }
